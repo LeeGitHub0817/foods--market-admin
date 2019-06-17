@@ -12,8 +12,12 @@ export default new Router({
       component: Home,
       children: [
         {
-          path: 'one',
-          component: () => import(/* webpackChunkName: "one" */ './')
+          path: '/home/one',
+          component: () => import(/* webpackChunkName: "one" */ './components/One.vue')
+        },
+        {
+          path: '/home/two',
+          component: () => import(/* webpackChunkName: "two" */ './components/Two.vue')
         }
       ]
     }

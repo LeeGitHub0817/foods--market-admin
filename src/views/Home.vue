@@ -1,13 +1,21 @@
 <template>
   <div class="home">
-    <div class="left-pad">
-      <button @click="jumpOne">page one</button>
-      <hr>
-      <button @click="jumpTwo">page two</button>
-    </div>
-    <div class="right-pad">
-      <router-view />
-    </div>
+    <el-container>
+      <el-aside width="300px" height="100%">
+        <!--菜单列表-->
+
+      </el-aside>
+      <el-container>
+        <el-header>
+          <i class="el-icon-s-fold head-left-fold"></i>
+        </el-header>
+        <el-main>
+          <div class="right-pad">
+            <router-view />
+          </div>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
@@ -21,24 +29,21 @@ export default {
   },
   methods: {
     jumpOne(){
-      this.$router.push('/one');
+      this.$router.push('/home/one');
     },
     jumpTwo(){
-      this.$router.push('/two');
+      this.$router.push('/home/two');
     }
   }
 }
 </script>
 
 <style scoped>
-  .left-pad{
-    width: 30%;
-    height: 100%;
-    background-color: #b35415;
-  }
-  .right-pad{
-    width: 70%;
-    height: 100%;
+  .head-left-fold{
+    width: 45px;
+    height: 45px;
+    color: #409EFF;
+    font-size: 45px;
   }
 </style>
 
